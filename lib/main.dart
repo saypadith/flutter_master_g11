@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
         title: 'Master G10 - Flutter',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          useMaterial3: true,
+          colorSchemeSeed: Colors.red,
         ),
         home: HomeScreen());
   }
