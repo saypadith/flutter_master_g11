@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_starter/common/header_text_widget.dart';
+import 'package:flutter_starter/screens/weather_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThirdScreen extends StatefulWidget {
@@ -40,6 +41,21 @@ class _ThirdScreenState extends State<ThirdScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Third Screen"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WeatherScreen(),
+                  ));
+            },
+            icon: const Icon(
+              Icons.cloud,
+              color: Colors.blue,
+            ),
+          ),
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.all(24.0),
