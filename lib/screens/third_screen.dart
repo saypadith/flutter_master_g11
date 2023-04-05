@@ -76,9 +76,21 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
             Row(
               children: [
-                Image.asset(
-                  "assets/images/corgi.png",
-                  width: MediaQuery.of(context).size.width * 0.40,
+                Stack(
+                  children: [
+                    Image.asset(
+                      "assets/images/corgi.png",
+                      width: MediaQuery.of(context).size.width * 0.40,
+                    ),
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.favorite, color: Colors.white),
+                      ),
+                    )
+                  ],
                 ),
                 Expanded(
                   child: Container(
