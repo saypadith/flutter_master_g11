@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_starter/common/header_text_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThirdScreen extends StatefulWidget {
   const ThirdScreen({super.key});
@@ -11,6 +12,29 @@ class ThirdScreen extends StatefulWidget {
 }
 
 class _ThirdScreenState extends State<ThirdScreen> {
+  bool? isFavorited;
+
+  setFavorite() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isFavorited = !isFavorited!;
+      prefs.setBool("isFavorited", isFavorited!);
+    });
+  }
+
+  getFavorite() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isFavorited = prefs.getBool("isFavorited") ?? false;
+    });
+  }
+
+  @override
+  void initState() {
+    getFavorite();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,8 +110,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       top: 0,
                       left: 0,
                       child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.favorite, color: Colors.white),
+                        onPressed: () {
+                          setFavorite();
+                        },
+                        icon: Icon(Icons.favorite,
+                            color: isFavorited! ? Colors.red : Colors.white),
                       ),
                     )
                   ],
