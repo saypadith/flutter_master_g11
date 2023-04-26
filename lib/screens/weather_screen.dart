@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
 import '../models/weather_model.dart';
 import '../providers/weather_provider.dart';
 
@@ -23,6 +20,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
     setState(() {
       weather = newWeather;
     });
+  }
+
+  Future<int> getNumber() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return 10;
   }
 
   @override
@@ -57,6 +59,18 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 Text('Description: ${weather!.description}'),
               ],
             ),
+          FutureBuilder(
+            future: getNumber(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text('Number: ${snapshot.data}');
+              } else if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              } else {
+                return const CircularProgressIndicator();
+              }
+            },
+          )
         ],
       ),
     );
