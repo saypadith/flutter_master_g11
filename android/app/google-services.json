@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "365615175487",
+    "project_id": "socialauthen-2fb0b",
+    "storage_bucket": "socialauthen-2fb0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365615175487:android:4a37ad2794f0fc757c258a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365615175487-cgr81596n4ql09pm0hbs1ntcvg2ptlbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6gZiFpJxczSFJkLEAF9UEqQx5Nb9wqw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365615175487-bbdjs9vtucvma78jrq1q7j7dcvqu0mhc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365615175487-27cappmk20d5jgnk4nckael8vkovcg3p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterStarter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

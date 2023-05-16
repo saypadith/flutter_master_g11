@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_starter/common/header_text_widget.dart';
+import 'package:flutter_starter/providers/get_data_provider.dart';
 import 'package:flutter_starter/screens/weather_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThirdScreen extends StatefulWidget {
@@ -147,7 +149,9 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   ),
                 )
               ],
-            )
+            ),
+            // provider
+            Text('${context.watch<GetDataProvider>().counter}')
           ],
         ),
       ),
